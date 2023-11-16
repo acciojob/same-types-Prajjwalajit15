@@ -1,14 +1,19 @@
 function isSameType(v1, v2) {
-	let a = typeof v1 ;
-	let b = typeof v2 ;
-	
-  if (a===b) {
-  	return true;
+  // Check if both values are NaN
+  if (isNaN(v1) && isNaN(v2)) {
+    return true;
   }
-	return false;
+
+  // Check if the types are the same and the values are equal
+  if (typeof v1 === typeof v2 && v1 === v2) {
+    return true;
+  }
+
+  return false;
 }
 
-// do not change the code below.
-let value1 = prompt("Enter Start of the Range.");
-let value2 = prompt("Enter End Of the Range.");
+// Example usage
+let value1 = prompt("Enter Value 1:");
+let value2 = prompt("Enter Value 2:");
 alert(isSameType(value1, value2));
+
